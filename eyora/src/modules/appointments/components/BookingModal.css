@@ -1,0 +1,405 @@
+/* Booking Modal Styles */
+
+/* Overlay */
+.booking-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Modal Container */
+.booking-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+    padding: 2.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Close Button */
+.booking-modal__close-button {
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #64748b;
+    margin-left: 0.5rem;
+}
+
+.booking-modal__close-button:hover {
+    background: #e2e8f0;
+    color: #00ADEE;
+    transform: rotate(90deg);
+}
+
+/* Header - Left Aligned Title, Right Aligned Date + Controls */
+.booking-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+    gap: 1.5rem;
+}
+
+.booking-modal__date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f8fafc;
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.booking-modal__date-wrapper--clickable {
+    cursor: pointer;
+}
+
+.booking-modal__date-wrapper--clickable:hover {
+    background: #f0f9ff;
+    border-color: #00ADEE;
+}
+
+.booking-modal__edit-date-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #00ADEE;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.booking-modal__date-wrapper--clickable:hover .booking-modal__edit-date-btn {
+    border-color: #00ADEE;
+    background: white;
+}
+
+.booking-modal__pick-slot-prompt {
+    padding: 1.25rem;
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-radius: 14px;
+    color: #92400e;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.booking-modal__header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.booking-modal__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.booking-modal__date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #64748b;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Form */
+.booking-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+/* Row (2 columns) */
+.booking-modal__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Field */
+.booking-modal__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-modal__field--full {
+    grid-column: 1 / -1;
+}
+
+.booking-modal__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 0.6rem;
+}
+
+/* Inline Time Selection & Display */
+.booking-modal__time-display {
+    width: 100%;
+    padding: 0.8rem 1.125rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    background: #f0f9ff;
+    color: #00ADEE;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 4px solid #00ADEE;
+}
+
+.booking-modal__edit-time-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: white;
+    border: 1px solid #00ADEE;
+    color: #00ADEE;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 173, 238, 0.1);
+}
+
+.booking-modal__edit-time-inline:hover {
+    background: #00ADEE;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 173, 238, 0.2);
+}
+
+/* Slots Picker */
+.booking-modal__slots-picker {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    max-height: 160px;
+    overflow-y: auto;
+    animation: fadeIn 0.2s ease;
+    margin-bottom: 0.75rem;
+}
+
+.booking-modal__no-slots {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.9rem;
+    padding: 1rem;
+}
+
+.booking-modal__cancel-edit {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Input Fields */
+.booking-modal__required {
+    color: #ef4444;
+}
+
+.booking-modal__input,
+.booking-modal__textarea {
+    width: 100%;
+    padding: 0.875rem 1.125rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.booking-modal__input::placeholder,
+.booking-modal__textarea::placeholder {
+    color: #94a3b8;
+}
+
+.booking-modal__input:focus,
+.booking-modal__textarea:focus {
+    outline: none;
+    border-color: #00ADEE;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 173, 238, 0.1);
+}
+
+.booking-modal__input--error {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.booking-modal__error {
+    display: block;
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 0.35rem;
+    font-weight: 500;
+}
+
+.booking-modal__textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+/* Error Message */
+.booking-modal__error-message {
+    padding: 1rem;
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    border-radius: 12px;
+    color: #b91c1c;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Submit Button */
+.booking-modal__submit {
+    width: 100%;
+    padding: 1.125rem;
+    background: linear-gradient(135deg, #00ADEE 0%);
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px -5px rgba(0, 173, 238, 0.4);
+    margin-top: 0.5rem;
+}
+
+.booking-modal__submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 30px -10px rgba(0, 173, 238, 0.5);
+    filter: brightness(1.1);
+}
+
+.booking-modal__submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: #94a3b8;
+    box-shadow: none;
+}
+
+/* Custom Scrollbar for Slots Picker */
+.booking-modal__slots-picker::-webkit-scrollbar {
+    width: 6px;
+}
+
+.booking-modal__slots-picker::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.booking-modal__slots-picker::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.booking-modal__slots-picker::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .booking-modal {
+        padding: 2.5rem 1.5rem 1.5rem;
+        width: 95%;
+    }
+
+    .booking-modal__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        text-align: left;
+    }
+
+    .booking-modal__row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .booking-modal__title {
+        font-size: 1.5rem;
+    }
+}

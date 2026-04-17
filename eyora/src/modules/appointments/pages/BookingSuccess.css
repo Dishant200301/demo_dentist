@@ -1,0 +1,55 @@
+.booking-success-page {
+    min-height: calc(100vh - 80px);
+    background-color: #f8fafc;
+    padding: 3rem 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-success-page__container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.booking-success-page__back-nav {
+    margin-bottom: 2rem;
+}
+
+.booking-success-page__back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.booking-success-page__back-link:hover {
+    color: hsl(var(--dental-accent));
+}
+
+.booking-success-page__content {
+    width: 100%;
+}
+
+/* Override or refine confirmation component styles specifically for the standalone page */
+.booking-success-page__content .booking-confirmation-dashboard__card {
+    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.12);
+}
+
+/* Responsive adjustments for the standalone container */
+@media (max-width: 1280px) {
+    .booking-success-page__container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 640px) {
+    .booking-success-page {
+        padding: 1.5rem 0 3rem;
+    }
+}
