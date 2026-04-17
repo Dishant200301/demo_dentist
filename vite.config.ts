@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => {
         "react/jsx-dev-runtime",
       ],
     },
+    envPrefix: ['VITE_', 'XBOOK_'],
   };
 });
 
