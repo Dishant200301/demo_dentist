@@ -1,0 +1,998 @@
+/* AppointmentsPage Styles - Redesigned to match Dent website */
+:root {
+    --dental-primary: 197 100% 47%;
+    --dental-accent: 197 100% 47%;
+    --dental-text: 225 43% 19%;
+    --gradient-blue-start: 197 100% 47%;
+    --gradient-blue-end: 225 43% 19%;
+}
+
+.appointments-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f9ff 0%, #fff 50%, #f0f9ff 100%);
+    padding: 150px 1rem 3rem;
+}
+
+/* Header */
+.appointments-page__header {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.appointments-page__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    color: hsl(var(--dental-text));
+    line-height: 1.2;
+}
+
+.appointments-page__subtitle {
+    display: none;
+}
+
+/* View Toggle */
+.appointments-page__toggle {
+    display: inline-flex;
+    background: white;
+    border-radius: 50px;
+    padding: 6px;
+    box-shadow: 0 4px 20px rgba(0, 173, 238, 0.15);
+    border: 2px solid #e2e8f0;
+}
+
+.appointments-page__toggle-btn {
+    padding: 0.875rem 2rem;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.appointments-page__toggle-btn--active {
+    background: linear-gradient(135deg, hsl(var(--gradient-blue-start)) 0%, hsl(var(--gradient-blue-end)) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 173, 238, 0.4);
+}
+
+/* Content */
+.appointments-page__content {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Progress Steps */
+.appointments-page__steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #fff 100%);
+    border-bottom: 2px solid #eef6ff;
+}
+
+.appointments-page__step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #cbd5e1;
+    transition: color 0.3s ease;
+}
+
+.appointments-page__step--active {
+    color: hsl(var(--dental-accent));
+}
+
+.appointments-page__step-number {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: currentColor;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.appointments-page__step--active .appointments-page__step-number {
+    background: linear-gradient(135deg, hsl(var(--gradient-blue-start)) 0%, hsl(var(--gradient-blue-end)) 100%);
+    box-shadow: 0 4px 12px rgba(0, 173, 238, 0.3);
+}
+
+.appointments-page__step-label {
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.appointments-page__step-line {
+    width: 80px;
+    height: 3px;
+    background: #f1f5f9;
+    margin: 0 1.5rem;
+    border-radius: 2px;
+}
+
+
+
+/* Section */
+.appointments-page__section {
+    padding: 2.5rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(52, 61, 75, 0.06);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.appointments-page__section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(var(--dental-text));
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.appointments-page__divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #eef6ff 20%, #eef6ff 80%, transparent);
+    margin: 2.5rem 0;
+}
+
+/* Selected Slot */
+.appointments-page__selected-slot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2.5rem;
+    background: linear-gradient(135deg, hsl(var(--gradient-blue-start)) 0%, hsl(var(--gradient-blue-end)) 100%);
+    color: white;
+}
+
+.appointments-page__selected-slot-info h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.appointments-page__selected-slot-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+.appointments-page__duration {
+    opacity: 0.9;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.appointments-page__change-btn {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.appointments-page__change-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Error */
+.appointments-page__error {
+    margin: 0 2.5rem 1.5rem;
+    padding: 1.25rem;
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+    border-radius: 16px;
+    color: #dc2626;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Actions */
+.appointments-page__actions {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 2.5rem 2.5rem;
+    border-top: 2px solid #f8fafc;
+}
+
+.appointments-page__back-btn {
+    padding: 1.125rem 2rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    color: #64748b;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.appointments-page__back-btn:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.appointments-page__submit-btn {
+    flex: 1;
+    padding: 1.125rem 2.5rem;
+    background: linear-gradient(135deg, hsl(var(--gradient-blue-start)) 0%, hsl(var(--gradient-blue-end)) 100%);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 173, 238, 0.35);
+}
+
+.appointments-page__submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 173, 238, 0.45);
+}
+
+.appointments-page__submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Date Selector */
+.date-selector {
+    position: relative;
+    padding: 0 40px;
+}
+
+.date-selector__scroll-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0.75rem 0.5rem;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.date-selector__scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.date-selector__nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.date-selector__nav-btn:hover {
+    background: #f8fafc;
+    color: hsl(var(--dental-accent));
+    border-color: hsl(var(--dental-accent));
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.date-selector__nav-btn--left {
+    left: 0;
+}
+
+.date-selector__nav-btn--right {
+    right: 0;
+}
+
+.date-selector__item {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.date-selector__item:hover:not(.date-selector__item--selected) {
+    background: #f0f9ff;
+    border-color: hsl(var(--dental-accent));
+    transform: scale(1.03);
+}
+
+.date-selector__item--selected {
+    background: #00ADEE;
+    color: #ffffff;
+    border-color: #00ADEE;
+    border-width: 2px;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 173, 238, 0.4);
+}
+
+
+
+.date-selector__day-name {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.date-selector__date-number {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    font-family: 'Inter', sans-serif;
+}
+
+.date-selector__month {
+    display: none;
+}
+
+.date-selector__slot-count {
+    display: none;
+}
+
+/* Time Slot Grid */
+.time-slot-grid {
+    min-height: 200px;
+}
+
+.time-slot-grid--loading,
+.time-slot-grid--empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    color: #64748b;
+    text-align: center;
+}
+
+.time-slot-grid__spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #f0f9ff;
+    border-top-color: #00ADEE;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.time-slot-grid__empty-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.time-slot-grid__section {
+    margin-bottom: 2rem;
+}
+
+.time-slot-grid__section:last-child {
+    margin-bottom: 0;
+}
+
+.time-slot-grid__section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #343d4b;
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.time-slot-grid__slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Slot Card */
+.slot-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    min-width: 120px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.slot-card:hover:not(:disabled):not(.slot-card--selected) {
+    background: #f0f9ff;
+    border-color: #00ADEE;
+    transform: scale(1.05);
+}
+
+.slot-card--selected {
+    background: #00ADEE;
+    color: #ffffff;
+    border-color: #00ADEE;
+    border-width: 2px;
+}
+
+.slot-card--selected:hover {
+    background: #15224D;
+    border-color: #15224D;
+}
+
+.slot-card--unavailable {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+.slot-card__time {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+.slot-card__duration {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.slot-card__badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.slot-card__badge--past {
+    background: #64748b;
+    color: white;
+}
+
+.slot-card__badge--booked {
+    background: #ef4444;
+    color: white;
+}
+
+/* Booking Form */
+.booking-form {
+    padding: 0 0 1rem;
+}
+
+.booking-form__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #343d4b;
+    margin-bottom: 2rem;
+}
+
+.booking-form__field {
+    margin-bottom: 1.5rem;
+}
+
+.booking-form__label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #343d4b;
+    margin-bottom: 0.75rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-form__required {
+    color: #ef4444;
+}
+
+.booking-form__input,
+.booking-form__textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    background: #f0f9ff;
+}
+
+.booking-form__input:focus,
+.booking-form__textarea:focus {
+    outline: none;
+    border-color: #00ADEE;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 173, 238, 0.1);
+}
+
+.booking-form__input--error {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.booking-form__error {
+    display: block;
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-form__textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Booking Confirmation */
+.booking-confirmation {
+    padding: 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.booking-confirmation__ticket {
+    width: 100%;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #f1f5f9;
+}
+
+.booking-confirmation__header {
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 640px) {
+    .booking-confirmation__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .booking-confirmation__title {
+        font-size: 1.75rem;
+    }
+    
+    .booking-confirmation__id-card {
+        font-size: 1.5rem;
+    }
+}
+
+.booking-confirmation__status--pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.booking-confirmation__note {
+    background: #eff6ff;
+    border: 2px solid #bfdbfe;
+    border-radius: 16px;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    color: #1e40af;
+    margin-bottom: 2rem;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-confirmation__button {
+    padding: 1.125rem 2.5rem;
+    background: linear-gradient(135deg, hsl(var(--gradient-blue-start)) 0%, hsl(var(--gradient-blue-end)) 100%);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(29, 112, 184, 0.35);
+}
+
+.booking-confirmation__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(29, 112, 184, 0.45);
+}
+
+/* Booking Status */
+.booking-status {
+    padding: 2.5rem;
+}
+
+.booking-status__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #343d4b;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.booking-status__form {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.booking-status__field {
+    margin-bottom: 1.25rem;
+}
+
+.booking-status__label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #343d4b;
+    margin-bottom: 0.75rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-status__input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    background: #f0f9ff;
+}
+
+.booking-status__input:focus {
+    outline: none;
+    border-color: hsl(var(--dental-accent));
+    background: white;
+    box-shadow: 0 0 0 4px rgba(29, 112, 184, 0.1);
+}
+
+.booking-status__error {
+    padding: 1rem;
+    background: #fef2f2;
+    border-radius: 12px;
+    color: #dc2626;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-status__button {
+    width: 100%;
+    padding: 1.125rem;
+    background: linear-gradient(135deg, hsl(var(--gradient-blue-start)) 0%, hsl(var(--gradient-blue-end)) 100%);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.75rem;
+    box-shadow: 0 6px 20px rgba(29, 112, 184, 0.35);
+}
+
+.booking-status__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(29, 112, 184, 0.45);
+}
+
+.booking-status__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.booking-status__button--secondary {
+    background: #f8fafc;
+    color: #64748b;
+    box-shadow: none;
+    border: 2px solid #e2e8f0;
+}
+
+.booking-status__button--secondary:hover {
+    background: #f1f5f9;
+    box-shadow: none;
+}
+
+.booking-status__button--danger {
+    background: #ef4444;
+}
+
+.booking-status__button--danger:hover {
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+.booking-status__result {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.booking-status__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.booking-status__reference {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(var(--dental-accent));
+    letter-spacing: 2px;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+.booking-status__badge {
+    padding: 0.625rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-status__badge--pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.booking-status__badge--approved {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.booking-status__badge--rejected {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.booking-status__badge--cancelled {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.booking-status__details {
+    background: linear-gradient(135deg, #f0f9ff 0%, #fff 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e2e8f0;
+}
+
+.booking-status__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eef6ff;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-status__row:last-child {
+    border-bottom: none;
+}
+
+.booking-status__message {
+    background: #eff6ff;
+    border-radius: 14px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #1e40af;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-status__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.booking-status__actions .booking-status__button {
+    flex: 1;
+}
+
+.booking-status__cancel-confirm {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background: #fef2f2;
+    border-radius: 14px;
+    text-align: center;
+    border: 2px solid #fecaca;
+}
+
+.booking-status__cancel-confirm p {
+    margin-bottom: 1.25rem;
+    color: #dc2626;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-status__cancel-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.booking-status__cancel-actions .booking-status__button {
+    flex: 1;
+}
+
+/* Responsive Design */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .appointments-page {
+        padding: 50px 1rem 2rem;
+    }
+
+    .appointments-page__title {
+        font-size: 2.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .appointments-page__subtitle {
+        display: none;
+    }
+
+    .appointments-page__section {
+        padding: 1.5rem;
+    }
+
+    .time-slot-grid__slots {
+        gap: 0.5rem;
+    }
+
+    .slot-card {
+        min-width: 100px;
+        padding: 0.75rem 1rem;
+    }
+
+    .slot-card__time {
+        font-size: 1rem;
+    }
+
+    .booking-modal {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .booking-modal__title {
+        font-size: 1.5rem;
+    }
+
+    .appointments-page__selected-slot {
+        padding: 1.25rem 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .appointments-page__actions {
+        padding: 1.5rem 1.5rem 2rem;
+        flex-direction: column;
+    }
+
+    .appointments-page__back-btn {
+        width: 100%;
+    }
+
+    .booking-confirmation {
+        padding: 3rem 1.5rem;
+    }
+
+    .booking-confirmation__title {
+        font-size: 2rem;
+    }
+
+    /* Date Selector Responsive Scroll */
+    .date-selector {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .date-selector::-webkit-scrollbar {
+        display: none;
+    }
+
+    .date-selector__scroll-container {
+        width: max-content;
+        min-width: 100%;
+        justify-content: flex-start;
+        padding-right: 1.5rem;
+    }
+
+    .date-selector__item {
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .appointments-page__title {
+        font-size: 2rem;
+    }
+
+    .appointments-page__toggle-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .date-selector__item {
+        width: 70px;
+        height: 70px;
+    }
+
+    .date-selector__date-number {
+        font-size: 1.5rem;
+    }
+}
